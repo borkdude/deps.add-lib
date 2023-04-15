@@ -22,7 +22,7 @@ Then in your `project.clj`:
 ``` clojure
 (defproject my-project "0.0.1"
   :dependencies [[org.clojure/clojure "1.12.0-alpha2"]
-                 [lein-repl-deps "0.0.1"]])
+                 [io.github.borkude/lein.repl.deps "0.0.1"]])
 ```
 
 And then REPL away:
