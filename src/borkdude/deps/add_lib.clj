@@ -1,11 +1,11 @@
-(ns lein.repl.deps
+(ns borkdude.deps.add-lib
   (:require
-   [clojure.repl.deps :as deps]
    [borkdude.deps :as deps.clj]
-   [clojure.tools.deps.interop :as tool]
    [clojure.edn :as edn]
+   [clojure.java.io :as io]
    [clojure.java.process :as proc]
-   [clojure.java.io :as io]))
+   [clojure.repl.deps :as deps]
+   [clojure.tools.deps.interop :as tool]))
 
 (defn- invoke-tool
   {:added "1.12"}
@@ -22,8 +22,8 @@
         command-strs [(str "-T" (or tool-alias tool-name)) (pr-str fn) (pr-str args)]
         _ (when (:debug opts) (apply println "Invoking: " command-strs))
         envelope (edn/read-string
-                  (binding [deps.clj/*process-fn* (clojure.core/fn [cmd]
-                                                    (apply proc/exec cmd))]
+                  (binding [deps.clj/*clojure-process-fn* (clojure.core/fn [{:keys [cmd]}]
+                                                            (apply proc/exec cmd))]
                     (apply deps.clj/-main command-strs)))]
     (if preserve-envelope
       envelope

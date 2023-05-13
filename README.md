@@ -1,34 +1,32 @@
-# lein.repl.deps
+# deps.add-lib
 
-Clojure 1.12's `add-lib` feature for leiningen.
+Clojure 1.12's `add-lib` combined with [deps.clj](https://github.com/borkdude/deps.clj).
 
-This is currently just a hack to show how you can tweak
-`clojure.tools.deps.interop/invoke-tool` to your liking.  In this project, I
-bound it to a function which invokes
-[deps.clj](https://github.com/borkdude/deps.clj), an implementation of the
-clojure CLI in clojure itself.
+This projects brings Clojure's new `add-lib` function to leiningen and/or other
+environments that do not have a or a specific version of the clojure CLI
+installed.
 
-As such, `lein.repl.deps/add-lib` will work in leiningen, without even having
-the clojure CLI installed.
+## Status
 
-Don't use in production, just in development and maybe not even that :).
+Experimental, use as a dev-only tool.
 
 ## Usage
 
-To use this, currently just clone this repo and call `lein install` to locally install it.
+To use this, add `io.github.borkdude/deps.add-lib {:mvn/version "0.0.1}` to your
+`deps.edn` or `project.clj`.
 
-Then in your `project.clj`:
+E.g. in your `project.clj`:
 
 ``` clojure
 (defproject my-project "0.0.1"
   :dependencies [[org.clojure/clojure "1.12.0-alpha2"]
-                 [io.github.borkude/lein.repl.deps "0.0.1"]])
+                 [io.github.borkude/deps.add-lib "0.0.1"]])
 ```
 
 And then REPL away:
 
 ``` clojure
-(require '[lein.repl.deps :refer [add-lib]])
+(require '[borkdudde.deps.add-lib :refer [add-lib]])
 (add-lib 'medley/medley)
 (require 'medley.core) ;; bingo
 ```
