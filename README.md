@@ -1,5 +1,7 @@
 # deps.add-lib
 
+[![Clojars Project](https://img.shields.io/clojars/v/io.github.borkdude/deps.add-lib.svg)](https://clojars.org/io.github.borkdude/deps.add-lib)
+
 Clojure 1.12's `add-lib` combined with [deps.clj](https://github.com/borkdude/deps.clj).
 
 This projects brings Clojure's new `add-lib` function to leiningen and/or other
