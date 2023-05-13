@@ -28,7 +28,7 @@ E.g. in your `project.clj`:
 And then REPL away:
 
 ``` clojure
-(require '[borkdudde.deps.add-lib :refer [add-lib]])
+(require '[borkdude.deps.add-lib :refer [add-lib]])
 (add-lib 'medley/medley)
 (require 'medley.core) ;; bingo
 ```
