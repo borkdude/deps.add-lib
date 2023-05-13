@@ -14,7 +14,7 @@ Experimental, use as a dev-only tool.
 
 ## Usage
 
-To use this, add `io.github.borkdude/deps.add-lib {:mvn/version "0.0.1}` to your
+To use this, add `io.github.borkdude/deps.add-lib {:mvn/version "<latest>"}` to your
 `deps.edn` or `project.clj`.
 
 E.g. in your `project.clj`:
