@@ -22,7 +22,7 @@ E.g. in your `project.clj`:
 ``` clojure
 (defproject my-project "0.0.1"
   :dependencies [[org.clojure/clojure "1.12.0-alpha2"]
-                 [io.github.borkude/deps.add-lib "0.0.1"]])
+                 [io.github.borkdude/deps.add-lib "<latest>"]])
 ```
 
 And then REPL away:
